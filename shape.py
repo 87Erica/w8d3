@@ -1,5 +1,5 @@
 import math
-
+#base shape
 class Shape:
     def __init__(self, color):
         self._color = color
@@ -8,7 +8,7 @@ class Shape:
         raise NotImplementedError("This method is overridden by subclasses")
     
     def calculate_perimeter(self):
-        raise NotImplementedError("This method overriden by subclasses")
+        raise NotImplementedError("This method is overridden by subclasses")
 
     def get_color(self):
         return self._color
@@ -25,7 +25,7 @@ class Circle(Shape):
     def calculate_area(self):
         return math.pi * self._radius ** 2
     
-    def calculate_perimiter(self):
+    def calculate_perimeter(self):
         return 2 * math.pi * self._radius
 
 #Derived Rectangle class   
@@ -59,11 +59,11 @@ class Triangle(Shape):
   #main program  
 def main():
     shapes = [ 
-        Circle("red", 10),
-        Rectangle("blue", 4, 6),
-        Triangle("purple", 3, 4, 5)
+        Circle("red", 5),
+        Rectangle("blue", 6, 12),
+        Triangle("purple", 3, 5, 7)
         ]
-        
+       
     for shape in shapes:
         print(f"Shape: {type(shape).__name__}")
         print(f"Color: {shape.get_color()}")
